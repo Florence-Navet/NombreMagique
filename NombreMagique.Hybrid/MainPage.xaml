@@ -2,12 +2,14 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:NombreMagique.Hybrid"
-             xmlns:components="clr-namespace:NombreMagique.Hybrid.Components"
+             xmlns:shared="clr-namespace:NombreMagique.Shared;assembly=NombreMagique.Shared"
+
+
              x:Class="NombreMagique.Hybrid.MainPage">
 
     <BlazorWebView x:Name="blazorWebView" HostPage="wwwroot/index.html">
         <BlazorWebView.RootComponents>
-            <RootComponent Selector="#app" ComponentType="{x:Type components:Routes}" />
+            <RootComponent Selector="#app" ComponentType="{x:Type shared:Game}" />
         </BlazorWebView.RootComponents>
     </BlazorWebView>
 

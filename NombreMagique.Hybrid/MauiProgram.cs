@@ -16,10 +16,21 @@ namespace NombreMagique.Hybrid
                 });
 
             builder.Services.AddMauiBlazorWebView();
+            Uri baseAddress;
+            if (DeviceInfo.Platform == DevicePlatform.Android)
+            {
+                // Android Emulator : 10.0.2.2 correspond à localhost du PC
+                baseAddress = new Uri("http://10.0.2.2:5254/");
+            }
+            else
+            {
+                // iOS Simulator, Mac ou Windows : localhost fonctionne
+                baseAddress = new Uri("http://localhost:5254/");
+            }
 
 #if DEBUG
-    		builder.Services.AddBlazorWebViewDeveloperTools();
-    		builder.Logging.AddDebug();
+            builder.Services.AddBlazorWebViewDeveloperTools();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();

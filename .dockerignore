@@ -1,0 +1,22 @@
+# ignore tous les bins du projet
+**/bin/
+
+# ignore tous les obj compile
+**/obj/
+
+# ignore l'historique git
+.git/
+
+# ignore le dossier cacher de vs code
+.vs/
+
+# ignore les fichiers vs se terminant par user
+**/*.user
+
+# ignore les resultats de test de .NET
+**/TestResults/
+
+# ignore les fichiers propre à la session
+**/*.suo
+
+#

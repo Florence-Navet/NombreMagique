@@ -1,0 +1,10 @@
+services:
+  server:
+    build:
+      context: .
+      dockerfile: NombreMagique.Server/Dockerfile
+    image: nombremagique-server:local
+    container_name: nombremagique-server
+    ports:
+      - "8083:8080"
+    restart: unless-stopped
